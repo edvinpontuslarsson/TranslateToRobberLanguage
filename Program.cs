@@ -8,17 +8,13 @@ namespace TranslateToRobberLanguage
         {
             while (true)
             {
-                Console.Write("Input and get it repeated: ");
+                Console.WriteLine("Translate text to the Robber Language!");
+                Console.Write("Input to translate: ");
                 string input = Console.ReadLine();
 
-                if (input == "ping") 
-                {
-                    string pong = Translator.Ping();
-                    Console.WriteLine(pong);
-                    continue;    
-                }
+                string robberLanguage = Translator.RobberLanguage(input);
 
-                Console.WriteLine(input);
+                Console.WriteLine(robberLanguage);
             }
         }
     }

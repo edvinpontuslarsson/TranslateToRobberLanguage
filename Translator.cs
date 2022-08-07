@@ -2,11 +2,30 @@ using System;
 
 namespace TranslateToRobberLanguage
 {
-    class Translator
+    public static class Translator
     {
-        public static string Ping()
+        public static string RobberLanguage(string input)
         {
-            return "pong";
+            string lowerCasedInput = input.ToLower();
+
+            string translation = "";
+            
+            char[] consonants = Helper.GetAllConsonants();
+
+            char[] inputChars = lowerCasedInput.ToCharArray();
+
+            foreach (char inputChar in inputChars)
+            {
+                if (Array.Exists(consonants, c => c == inputChar))
+                {
+                    translation += inputChar + "o" + inputChar;
+                    continue;
+                }
+
+                translation += inputChar;
+            }
+
+            return translation;
         }
     }
 }
