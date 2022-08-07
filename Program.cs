@@ -10,6 +10,14 @@ namespace TranslateToRobberLanguage
             {
                 Console.Write("Input and get it repeated: ");
                 string input = Console.ReadLine();
+
+                if (input == "ping") 
+                {
+                    string pong = Translator.Ping();
+                    Console.WriteLine(pong);
+                    continue;    
+                }
+
                 Console.WriteLine(input);
             }
         }
